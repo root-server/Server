@@ -35,7 +35,7 @@ namespace DevActivator.Controllers
             var filePath = _settings.GetSpeakerAvatarFilePath(speakerId);
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
-                await formFile.CopyToAsync(stream).ConfigureAwait(true);
+                await formFile.CopyToAsync(stream);
             }
         }
 
@@ -56,7 +56,7 @@ namespace DevActivator.Controllers
             var filePath = _settings.GetFriendAvatarFilePath(friendId);
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
-                await formFile.CopyToAsync(stream).ConfigureAwait(true);
+                await formFile.CopyToAsync(stream);
             }
         }
     }
